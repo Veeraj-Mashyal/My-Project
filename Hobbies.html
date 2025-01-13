@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personal website to showcase hobbies and interests.">
+    <title>Your Name - Hobbies & Interests</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f1ea;
+            color: #4e4a46;
+            scroll-behavior: smooth; /* Smooth scrolling enabled here */
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #5c3a21; /* Dark brown */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav .logo img {
+            height: 40px; /* Adjust the logo size */
+            width: auto;
+            aspect-ratio: 4/3.5;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #7f5a3c; /* Warm brown */
+            color: white;
+            padding: 8rem 2rem 2rem 2rem; /* Added padding on left and right */
+            text-align: center;
+            margin-top: 60px; /* Offset for fixed navbar */
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #5c3a21; /* Dark brown */
+        }
+
+        /* Main Section styling */
+        main {
+            padding: 8rem 6rem; /* Added padding on left and right */
+        }
+
+        /* About Me Section */
+        #about {
+            background-color: #faebd7; /* Antique white */
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            color: #4e4a46;
+        }
+
+        /* Hobby List Styles */
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid #7f5a3c; /* Accent line in brown */
+        }
+
+        ul li h3 {
+            font-size: 1.8rem;
+            color: #5c3a21;
+        }
+
+        ul li p {
+            font-size: 1rem;
+            color: #6b4f31; /* Medium brown */
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f1e2d3; /* Light beige */
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        #contact ul {
+            list-style-type: none;
+            font-size: 1.1rem;
+        }
+
+        #contact li {
+            margin: 0.8rem 0;
+        }
+
+        #contact a {
+            color: #7f5a3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #5c3a21; /* Dark brown */
+            color: white;
+            text-align: center;
+            padding: 1.5rem 2rem; /* Added padding on left and right */
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            ul li {
+                padding: 1.3rem;
+                margin: 1.3rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            /* Navbar for medium screens */
+            nav .container {
+                padding: 0 1rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            ul li {
+                padding: 1.2rem;
+                margin: 1.2rem 0;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            /* Navbar for small screens */
+            nav .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav .logo {
+                margin-bottom: 1rem;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 6rem 1rem 2rem 1rem; /* Adjust header padding for small screens */
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            ul li {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+
+            footer {
+                padding: 1rem;
+            }
+
+            footer p {
+                font-size: 0.7rem;
+            }
+
+            /* Navbar for ultra-small screens */
+            nav a {
+                font-size: 1rem;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="Veeraj.png" alt="Logo">
+            </div>
+
+            <!-- Menu Links -->
+            <div class="menu">
+                <a href="#about">About Me</a>
+                <a href="#hobbies">My Hobbies</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Welcome to My Personal Website!</h1>
+            <p>I'm Veeraj, and here are some of my favorite hobbies and interests!</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <!-- About Me Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hi! I'm Veeraj Mashyal, a passionate Computer Programmer. When I'm not working, I love to spend my time exploring various hobbies and activities. This website is a place to share some of my favorite things!</p>
+            </section>
+
+            <!-- Hobbies Section -->
+            <section id="hobbies">
+                <h2>My Hobbies</h2>
+                <ul>
+                    <li>
+                        <h3>Music</h3>
+                        <p>Whether it's listening to my favorite bands or playing the guitar, music is a huge part of my life. It helps me unwind and feel connected to the world.</p>
+                    </li>
+                    <li>
+                        <h3>Networking</h3>
+                        <p>Attend professional or interest-based events to meet new people and expand your connections.</p>
+                    </li>
+                    <li>
+                        <h3>Cooking</h3>
+                        <p>In my free time, I enjoy experimenting with new recipes and cooking dishes. I especially love baking Pizza. Love of cooking by preparing meals for friends, family, or even neighbors.</p>
+                    </li>
+                    <li>
+                        <h3>Volunteering</h3>
+                        <p>Volunteering is a fulfilling hobby that lets you help others, learn new skills, and make a positive impact in your community.</p>
+                    </li>
+                    <li>
+                        <h3>Graphic Design</h3>
+                        <p>I have a passion for visual creativity. Whether it's designing logos, illustrations, or digital artwork, I love experimenting with colors, shapes, and typography.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>If you'd like to connect or learn more about any of my hobbies, feel free to reach out. I would love to hear from you!</p>
+                <ul>
+                    <li>Email: <a href="mailto:mashyalveeraj@gmail.com">mashyalveeraj@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://twitter.com/yourusername" target="_blank">LinkedIn</a></li>
+                    <li>GitHub: <a href="https://instagram.com/yourusername" target="_blank">GitHub</a></li>
+                    <li>Telephone: <a href="tel:9923950160" target="_blank">+91 9923950160</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Veeraj Mashyal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
